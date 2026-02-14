@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Einkaufsliste</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <h1>Meine Einkaufsliste</h1>
+        <p>Klicke auf ein Symbol, um es zur Liste hinzuzufügen oder abzuhaken.</p>
+      </header>
+
+      <section class="panel" aria-labelledby="active-list-title">
+        <div class="panel-header">
+          <h2 id="active-list-title">Aktuelle Liste</h2>
+          <span id="activeCount" class="badge">0</span>
+        </div>
+        <div id="activeList" class="items-grid" role="list"></div>
+      </section>
+
+      <section class="panel insights" aria-labelledby="insights-title">
+        <h2 id="insights-title">Deine Einkaufsgewohnheiten</h2>
+        <p id="topItems" class="insight-line">Noch keine Einkäufe erfasst.</p>
+        <ul id="predictions" class="prediction-list"></ul>
+      </section>
+
+      <section class="panel" aria-labelledby="catalog-title">
+        <div class="panel-header">
+          <h2 id="catalog-title">Verfügbare Gegenstände</h2>
+          <span id="catalogCount" class="badge">0</span>
+        </div>
+        <div id="catalogList" class="items-grid" role="list"></div>
+      </section>
+    </main>
+
+    <template id="itemTemplate">
+      <button class="item-tile" type="button">
+        <span class="emoji" aria-hidden="true"></span>
+        <span class="label"></span>
+      </button>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
