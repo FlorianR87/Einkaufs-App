@@ -1,0 +1,122 @@
+:root {
+  color-scheme: light;
+  --bg: #f6f8ff;
+  --panel: #ffffff;
+  --text: #1d2333;
+  --muted: #6b7387;
+  --primary: #4f7cff;
+  --primary-soft: #e9efff;
+  --ok: #27b57a;
+  --tile: #f2f5ff;
+  --border: #dfe5f6;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(circle at top, #fdfdff, var(--bg));
+  color: var(--text);
+}
+
+.app {
+  width: min(1000px, 92vw);
+  margin: 2rem auto;
+  display: grid;
+  gap: 1rem;
+}
+
+header h1 { margin: 0; }
+header p { color: var(--muted); margin-top: 0.4rem; }
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 8px 20px rgba(31, 58, 147, 0.07);
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.badge {
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+}
+
+.tile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 0.65rem;
+}
+
+.item-tile {
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: var(--tile);
+  color: var(--text);
+  min-height: 92px;
+  padding: 0.45rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.35rem;
+}
+
+.item-tile:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary);
+}
+
+.item-tile .icon { font-size: 1.6rem; }
+.item-tile .label { font-size: 0.92rem; font-weight: 600; }
+
+.active-grid .item-tile {
+  background: #ecfff6;
+  border-color: #b6edd0;
+}
+
+.empty {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+.insight-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 0.8rem;
+}
+
+.insight-card {
+  background: #f9fbff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.75rem;
+}
+
+.insight-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.35rem;
+  color: #374164;
+}
+
+.insight-card p {
+  margin: 0;
+  line-height: 1.3;
+}
+
+@media (max-width: 640px) {
+  .app { margin: 1rem auto 2rem; }
+}

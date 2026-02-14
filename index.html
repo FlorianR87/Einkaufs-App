@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Einkaufsliste Smart</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <h1>🛒 Einkaufsliste Smart</h1>
+        <p>Klicke unten auf Gegenstände, um sie deiner Liste hinzuzufügen.</p>
+      </header>
+
+      <section class="panel active-list-panel">
+        <div class="panel-header">
+          <h2>Meine Einkaufsliste</h2>
+          <span id="active-count" class="badge">0</span>
+        </div>
+        <div id="active-list" class="tile-grid active-grid" aria-live="polite"></div>
+        <p id="active-empty" class="empty">Noch nichts auf deiner Einkaufsliste.</p>
+      </section>
+
+      <section class="panel insights-panel">
+        <h2>📈 Einkaufs-Insights</h2>
+        <div class="insight-cards">
+          <article class="insight-card">
+            <h3>Häufig gekauft</h3>
+            <p id="most-frequent">Noch keine Daten</p>
+          </article>
+          <article class="insight-card">
+            <h3>Nächster Bedarf</h3>
+            <p id="next-needed">Noch keine Prognose möglich</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel catalog-panel">
+        <h2>Allgemeine Leiste</h2>
+        <div id="catalog" class="tile-grid"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
